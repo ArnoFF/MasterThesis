@@ -1,0 +1,24 @@
+SIMULATION DESCRIPTION
+
+Functions to change values:
+
+'Main': Script to start the simulation from. Initializes constants and vehicles. Starts the forward euler loop and creates GIF.
+	  Change initial values of vehicles or create new vehicles. Change constants such as dt, sensor range, ...
+
+'Step_function': Change mission of vehicles to specific times.
+
+
+
+Other functions:
+
+'FwdEuler': Calls 'step_function' every time step.
+
+'Controller': Creates control input for a vehicle. Entails CBFs and CLFs and the QP.
+
+'Detect_vehicles': Called in 'Controller' to detect which vehicles are on which relative position to the ego vehicle.
+
+'unpackStruct': Called in 'Controller'. Unpacks the structure created in 'Detect_vehicles' so the data can be easily used in 'Controller'.
+
+'lambda': Calculates the function 'lambda' and its derivatives used in CBFs. (Called in 'Controller') 
+
+
